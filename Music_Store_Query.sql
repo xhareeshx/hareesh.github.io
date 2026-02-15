@@ -1,3 +1,46 @@
+1. Project Overview
+ The objective of this project was to analyze a digital music store's database to extract actionable insights regarding customer behavior,
+ sales performance, and regional music preferences.
+ The analysis helps the store plan promotional events (like Music Festivals) and optimize their marketing outreach.
+
+2. Technical SQL Skills Demonstrated
+ Throughout the project, I implemented several advanced SQL techniques to manipulate and retrieve data:
+ Aggregations: Used SUM, COUNT, and AVG to calculate financial metrics and track volumes.
+ Joins: Performed multi-level joins (up to 6 tables) to connect Customers, Invoices, Tracks, Albums, Artists, and Genres.
+ Subqueries & CTEs: Utilized Common Table Expressions (CTEs) and recursive queries to break down complex logic into readable steps.
+ Window Functions: Applied ROW_NUMBER() with PARTITION BY to rank data within specific categories (e.g., finding the top customer per country).
+ Filtering & Sorting: Used GROUP BY, ORDER BY, and LIMIT to isolate top-performing entities.
+
+3. Key Findings & Business Insights
+ Based on the queries executed, here are the primary insights derived from the dataset:
+ A. Sales & Geographic Performance
+ Top Market for Expansion: We identified the city with the highest total invoice value, making it the prime candidate for a promotional Music  Festival.
+ Revenue Concentration: By analyzing invoice counts by country, we can see where the brand has the strongest market penetration.
+
+ B. Customer Insights
+ The "Best" Customer: Identified the highest-spending customer globally to target for loyalty rewards or VIP offers.
+ Rock Music Affinity: Isolated a specific list of "Rock" listeners (Email, Name) for targeted email marketing campaigns.
+
+ C. Content & Artist Analysis
+ Dominant Genre: Rock music remains a significant driver of sales, with a clear list of top-performing artists within that category.
+ Track Length Benchmarking: Calculated the average track length to identify "Epic" tracks (songs longer than the average), which can be curated into special playlists.
+
+4. Logical Translation (SQL Logic vs. DAX)
+
+  While this project was performed in SQL, if this were moved to a Power BI environment, the following DAX concepts would be used to  replicate  your results.
+SUM(total),Total Sales = SUM(Invoice[Total])
+ROW_NUMBER() OVER(...),RANKX() or TOPN() functions
+JOIN tables,Creating Relationships in the Data Model
+WHERE genre.name = 'Rock',"CALCULATE([Measure], Genre[Name] = ""Rock"")"
+AVG(milliseconds),AVERAGE(Track[Milliseconds])
+
+5. Conclusion
+
+ This analysis provides a 360-degree view of the music store’s operations. By identifying the top customers,
+ most popular genres per country, and best-selling artists,
+ the business can now make data-driven decisions on inventory management and localized marketing strategies.
+
+	
 /*	Question Set 1 - /
 
 /* Q1: Who is the senior most employee based on job title? */
